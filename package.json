@@ -22,7 +22,7 @@
     "gulp-load-plugins": "1.6.0",
     "gulp-replace": "1.0.0",
     "lodash": "4.17.5",
-    "node-sass": "4.12.0",
+    "node-sass": "^5.0.0",
     "sass-loader": "6.0.6",
     "svg-sprite-loader": "3.7.3",
     "vue": "2.6.10",
@@ -93,5 +93,20 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "description": "一个基于vue、element ui 的轻量级、前后端分离、拥有完整sku和下单流程的完全开源商城后台所属前端界面",
+  "main": ".eslintrc.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lxkyes/mall4v.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lxkyes/mall4v/issues"
+  },
+  "homepage": "https://github.com/lxkyes/mall4v#readme"
 }
