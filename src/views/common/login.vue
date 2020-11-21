@@ -2,6 +2,9 @@
   <div class="login">
     <div class="login-box">
       <div class="top">
+        <div id="codeView" v-highlight>
+          <pre><code v-html='"0x0000000000400da0 <+0>:\tpush\t%rbx\n0x0000000000400da1 <+1>:\tcmp\t$0x1,%edi\n0x0000000000400da4 <+4>:\tjne\t0x400db6 <main+22>\n"'></code></pre>
+        </div>
         <div class="logo"><img src="~@/assets/img/login-logo.png"
                alt=""></div>
       </div>

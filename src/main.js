@@ -12,6 +12,10 @@ import '@/assets/scss/index.scss'
 import httpRequest from '@/utils/httpRequest' // api: https://github.com/axios/axios
 import { isAuth } from '@/utils'
 import cloneDeep from 'lodash/cloneDeep'
+import Highlight from './utils/highlight'; // from 路径是highlight.js的路径，纯属自定义
+
+// highlight.js代码高亮插件
+Vue.use(Highlight);
 
 Vue.use(Avue)
 Vue.use(VueCookie)
