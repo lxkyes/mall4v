@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import { tableOption } from '@/crud/code/codeList'
+import { tableOption } from '@/crud/title/titleList'
 export default {
   data () {
     return {
@@ -77,7 +77,7 @@ export default {
     getDataList (page, params) {
       this.dataListLoading = true
       this.$http({
-        url: this.$http.adornUrl('/code/page'),
+        url: this.$http.adornUrl('/title/page'),
         method: 'get',
         params: this.$http.adornParams(
           Object.assign(
@@ -118,7 +118,7 @@ export default {
       })
         .then(() => {
           this.$http({
-            url: this.$http.adornUrl('aaaa'),
+            url: this.$http.adornUrl(`/title/${id}`),
             method: 'delete',
             data: this.$http.adornData({})
           }).then(({ data }) => {

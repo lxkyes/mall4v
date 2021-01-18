@@ -17,16 +17,16 @@ export const tableOption = {
     label: 'label',
     value: 'value'
   },
-  column: [{
-    label: '语言',
-    prop: 'codeType'
-  }, {
+  column: [ {
     label: '作者',
     prop: 'author',
     search: true
   }, {
-    label: '题目id',
-    prop: 'subjectId',
+    label: '题目',
+    prop: 'subject',
     search: true
+  }, {
+    label: '任务状态',
+    prop: 'status'
   }]
 }

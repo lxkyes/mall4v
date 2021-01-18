@@ -13,7 +13,8 @@ import httpRequest from '@/utils/httpRequest' // api: https://github.com/axios/a
 import { isAuth } from '@/utils'
 import cloneDeep from 'lodash/cloneDeep'
 import Highlight from './utils/highlight'; // from 路径是highlight.js的路径，纯属自定义
-
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts //将echarts注册成Vue的全局属性
 // highlight.js代码高亮插件
 Vue.use(Highlight);
 

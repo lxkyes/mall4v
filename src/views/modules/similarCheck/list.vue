@@ -16,11 +16,6 @@
                    v-if="isAuth('shop:pickAddr:save')"
                    @click.stop="addOrUpdateHandle()">新增</el-button> -->
 
-        <el-button type="danger"
-                   @click="deleteHandle()"
-                   size="small"
-                   v-if="isAuth('shop:pickAddr:delete')"
-                   :disabled="dataListSelections.length <= 0">批量删除</el-button>
       </template>
 
       <template slot-scope="scope"
@@ -37,7 +32,7 @@
                    icon="el-icon-edit"
                    size="small"
                    v-if="isAuth('prod:prod:update')"
-                   @click="addOrUpdateHandle(scope.row.content)">查看</el-button>
+                   @click="addOrUpdateHandle(scope.row.result, scope.row.radioResults, scope.row.authors, scope.row.features)">查看</el-button>
         <el-button type="danger"
                    icon="el-icon-delete"
                    size="small"
@@ -50,7 +45,7 @@
 </template>
 
 <script>
-import { tableOption } from '@/crud/code/codeList'
+import { tableOption } from '@/crud/similarCheck/list'
 export default {
   data () {
     return {
@@ -77,7 +72,7 @@ export default {
     getDataList (page, params) {
       this.dataListLoading = true
       this.$http({
-        url: this.$http.adornUrl('/code/page'),
+        url: this.$http.adornUrl('/similarCheck/list'),
         method: 'get',
         params: this.$http.adornParams(
           Object.assign(
@@ -100,11 +95,14 @@ export default {
         this.dataListLoading = false
       })
     },
-    // 新增 / 修改
-    addOrUpdateHandle (content) {
+    // 查看
+    addOrUpdateHandle (result, radioResults, authors, features) {
+      console.log(result)
+      console.log(features)
+      console.log(features[10])
       this.$router.push({
-        path: '/codeInfo',
-        query: { content: content }
+        path: '/similarCheckInfo',
+        query: { result: result, radioResults: radioResults, authors: authors, features: features }
         // path: '/prodInfo',
         // query: { prodId: id }
       })
@@ -118,7 +116,7 @@ export default {
       })
         .then(() => {
           this.$http({
-            url: this.$http.adornUrl('aaaa'),
+            url: this.$http.adornUrl(`aaa`),
             method: 'delete',
             data: this.$http.adornData({})
           }).then(({ data }) => {

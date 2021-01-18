@@ -10,11 +10,11 @@
                @selection-change="selectionChange"
                @on-load="getDataList">
       <template slot="menuLeft">
-        <!-- <el-button type="primary"
+        <el-button type="primary"
                    icon="el-icon-plus"
                    size="small"
                    v-if="isAuth('shop:pickAddr:save')"
-                   @click.stop="addOrUpdateHandle()">新增</el-button> -->
+                   @click.stop="addOrUpdateHandle()">新增</el-button>
 
         <el-button type="danger"
                    @click="deleteHandle()"

@@ -16,11 +16,6 @@
                    v-if="isAuth('shop:pickAddr:save')"
                    @click.stop="addOrUpdateHandle()">新增</el-button> -->
 
-        <el-button type="danger"
-                   @click="deleteHandle()"
-                   size="small"
-                   v-if="isAuth('shop:pickAddr:delete')"
-                   :disabled="dataListSelections.length <= 0">批量删除</el-button>
       </template>
 
       <template slot-scope="scope"
@@ -50,7 +45,7 @@
 </template>
 
 <script>
-import { tableOption } from '@/crud/code/codeList'
+import { tableOption } from '@/crud/dataCraw/contestList'
 export default {
   data () {
     return {
@@ -77,7 +72,7 @@ export default {
     getDataList (page, params) {
       this.dataListLoading = true
       this.$http({
-        url: this.$http.adornUrl('/code/page'),
+        url: this.$http.adornUrl('/dataCraw/page'),
         method: 'get',
         params: this.$http.adornParams(
           Object.assign(
@@ -118,7 +113,7 @@ export default {
       })
         .then(() => {
           this.$http({
-            url: this.$http.adornUrl('aaaa'),
+            url: this.$http.adornUrl(`/code/${id}`),
             method: 'delete',
             data: this.$http.adornData({})
           }).then(({ data }) => {

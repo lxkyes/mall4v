@@ -118,7 +118,7 @@ export default {
       })
         .then(() => {
           this.$http({
-            url: this.$http.adornUrl('aaaa'),
+            url: this.$http.adornUrl(`/code/${id}`),
             method: 'delete',
             data: this.$http.adornData({})
           }).then(({ data }) => {
